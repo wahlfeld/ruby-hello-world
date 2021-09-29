@@ -1,7 +1,7 @@
 # ruby-helloworld
 
 <!-- markdown-link-check-disable-next-line -->
-[![build](https://github.com/wahlfeld/ruby-helloworld/actions/workflows/build.yml/badge.svg)](https://github.com/wahlfeld/ruby-helloworld/actions/workflows/build.yml)
+[![build](https://github.com/wahlfeld/ruby-hello-world/actions/workflows/build.yml/badge.svg)](https://github.com/wahlfeld/ruby-hello-world/actions/workflows/build.yml)
 
 Hello,
 
