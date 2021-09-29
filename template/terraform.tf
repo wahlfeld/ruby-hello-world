@@ -3,7 +3,7 @@ terraform {
 
   backend "s3" {
     # bucket = "CHANGEME"
-    # key    = "ruby-helloworld/prod/terraform.tfstate"
+    # key    = "ruby-hello-world/prod/terraform.tfstate"
     # region = "CHANGEME"
   }
 

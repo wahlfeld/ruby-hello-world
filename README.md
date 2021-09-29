@@ -1,4 +1,4 @@
-# ruby-helloworld
+# ruby-hello-world
 
 <!-- markdown-link-check-disable-next-line -->
 [![build](https://github.com/wahlfeld/ruby-hello-world/actions/workflows/build.yml/badge.svg)](https://github.com/wahlfeld/ruby-hello-world/actions/workflows/build.yml)
@@ -71,8 +71,8 @@ Opening browser to https://cli-auth.heroku.com/auth/cli/browser/blablabla
 Logging in... done
 Logged in as me@gmail.com
 
-> heroku git:remote -a wahlfeld-ruby-helloworld
-set git remote heroku to https://git.heroku.com/wahlfeld-ruby-helloworld.git
+> heroku git:remote -a wahlfeld-ruby-hello-world
+set git remote heroku to https://git.heroku.com/wahlfeld-ruby-hello-world.git
 
 > git add -A
 
@@ -128,13 +128,13 @@ remote: -----> Compressing...
 remote:        Done: 15M
 remote: -----> Launching...
 remote:        Released v4
-remote:        https://wahlfeld-ruby-helloworld.herokuapp.com/ deployed to Heroku
+remote:        https://wahlfeld-ruby-hello-world.herokuapp.com/ deployed to Heroku
 remote:
 remote: Verifying deploy... done.
-To https://git.heroku.com/wahlfeld-ruby-helloworld.git
+To https://git.heroku.com/wahlfeld-ruby-hello-world.git
  * [new branch]      main -> main
 ```
-https://wahlfeld-ruby-helloworld.herokuapp.com/hello-world
+https://wahlfeld-ruby-hello-world.herokuapp.com/hello-world
 
 ### AWS
 
@@ -151,8 +151,8 @@ aws_region       = "ap-southeast-2"    // Choose a region closest to your physic
 ### Example folder structure
 
 ```
-ruby-helloworld           // (this project)
-└── your-ruby-helloworld  // (create me)
+ruby-hello-world           // (this project)
+└── your-ruby-hello-world  // (create me)
     ├── inputs.tf        // (copied from ./template)
     ├── main.tf          // (copied from ./template)
     ├── terraform.tf     // (copied from ./template)
@@ -163,7 +163,7 @@ ruby-helloworld           // (this project)
 
 To view server monitoring metrics visit the `monitoring_url` output from
 Terraform after deploying. Note that this URL will change every time the server
-starts unless you're using your own domain in AWS. 
+starts.
 
 <!-- BEGIN_TF_DOCS -->
 ## Inputs
@@ -171,7 +171,6 @@ starts unless you're using your own domain in AWS.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to create the helloworld server | `string` | n/a | yes |
-| <a name="input_domain"></a> [domain](#input\_domain) | Domain name used to create a static monitoring URL | `string` | `""` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | AWS EC2 instance type to run the server on | `string` | `"t3a.nano"` | no |
 | <a name="input_purpose"></a> [purpose](#input\_purpose) | The purpose of the deployment | `string` | `"test"` | no |
 | <a name="input_unique_id"></a> [unique\_id](#input\_unique\_id) | The ID of the deployment (used for tests) | `string` | `""` | no |
