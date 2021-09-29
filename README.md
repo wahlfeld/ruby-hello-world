@@ -55,12 +55,11 @@ Cheers, Team Muppet
 ```
 heroku login
 
-heroku git:clone -a <NAME_OF_HEROKU_APP>
-cd <NAME_OF_HEROKU_APP>
+heroku apps:create <NAME_OF_APP>
 
-git add -A
-git commit -am "feat: add helloworld app"
-git push heroku main
+heroku git:remote -a <NAME_OF_APP>
+
+git subtree push --prefix module/local/src heroku main
 ```
 
 e.g.
@@ -71,20 +70,20 @@ Opening browser to https://cli-auth.heroku.com/auth/cli/browser/blablabla
 Logging in... done
 Logged in as me@gmail.com
 
+> heroku apps:create wahlfeld-ruby-hello-world
+Creating ⬢ wahlfeld-ruby-hello-world... done
+
 > heroku git:remote -a wahlfeld-ruby-hello-world
 set git remote heroku to https://git.heroku.com/wahlfeld-ruby-hello-world.git
 
-> git add -A
-
-> git commit -am "feat: add helloworld app"
-
-> git push heroku main
-Enumerating objects: 10, done.
-Counting objects: 100% (10/10), done.
+> git subtree push --prefix module/local/src heroku main
+git push using:  heroku main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
 Delta compression using up to 4 threads
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (10/10), 2.80 KiB | 574.00 KiB/s, done.
-Total 10 (delta 0), reused 0 (delta 0), pack-reused 0
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 828 bytes | 276.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
 remote: Compressing source files... done.
 remote: Building source:
 remote:
@@ -99,12 +98,12 @@ remote: -----> Installing dependencies using bundler 1.17.3
 remote:        Running: BUNDLE_WITHOUT='development:test' BUNDLE_PATH=vendor/bundle BUNDLE_BIN=vendor/bundle/bin BUNDLE_DEPLOYMENT=1 BUNDLE_GLOBAL_PATH_APPENDS_RUBY_SCOPE=1 bundle install -j4
 remote:        Fetching gem metadata from https://rubygems.org/....
 remote:        Using bundler 1.17.3
-remote:        Fetching rack 2.2.3
 remote:        Fetching ruby2_keywords 0.0.2
+remote:        Fetching rack 2.2.3
 remote:        Fetching tilt 2.0.10
-remote:        Installing rack 2.2.3
-remote:        Installing ruby2_keywords 0.0.2
 remote:        Installing tilt 2.0.10
+remote:        Installing ruby2_keywords 0.0.2
+remote:        Installing rack 2.2.3
 remote:        Fetching mustermann 1.1.1
 remote:        Installing mustermann 1.1.1
 remote:        Fetching rack-protection 2.1.0
@@ -114,12 +113,11 @@ remote:        Installing sinatra 2.1.0
 remote:        Bundle complete! 1 Gemfile dependency, 7 gems now installed.
 remote:        Gems in the groups development and test were not installed.
 remote:        Bundled gems are installed into `./vendor/bundle`
-remote:        Bundle completed (1.98s)
+remote:        Bundle completed (1.85s)
 remote:        Cleaning up the bundler cache.
-remote: -----> Detecting rake tasks
-remote:
+
 blablabla
-remote:
+
 remote: -----> Discovering process types
 remote:        Procfile declares types     -> (none)
 remote:        Default types for buildpack -> console, rake, web
@@ -132,7 +130,7 @@ remote:        https://wahlfeld-ruby-hello-world.herokuapp.com/ deployed to Hero
 remote:
 remote: Verifying deploy... done.
 To https://git.heroku.com/wahlfeld-ruby-hello-world.git
- * [new branch]      main -> main
+ * [new branch]      cf5cf2bc5673e11a88f6dde6a37968c99009ea64 -> main
 ```
 https://wahlfeld-ruby-hello-world.herokuapp.com/hello-world
 
